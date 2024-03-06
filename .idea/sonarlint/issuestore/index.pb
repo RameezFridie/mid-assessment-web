@@ -23,8 +23,6 @@ V
 &src/test/java/web/tests/UsersTest.java,e\5\e5da88e3d2e5b710f66aa74168eefe753c26dd65
 `
 0src/test/java/web/pages/reports/ReportsPage.java,7\4\74076e514e2c16fe7119199264ea8abbef117e20
-X
-(src/test/java/web/tests/ReportsTest.java,8\0\80b1cc0b24a1a1fe7d91fb9266e5275d2dd77323
 `
 0src/test/java/web/pages/reviews/ReviewsPage.java,c\6\c64aa9a55404c7a2340c5db63052f80e1dbed951
 Z
@@ -63,3 +61,5 @@ G.idea/sonarlint/issuestore/f/0/f07866736216be0ee2aba49e392191aeae700a35,b\f\bf
 Q.idea/sonarlint/securityhotspotstore/1/1/118605292ffc163be8b91db45cb124004b33e456,5\b\5b8264ba8bb429e13be590de949f6fbc4e134108
 Å
 Q.idea/sonarlint/securityhotspotstore/0/c/0c5a5d0fdbeaeddd962a9ee7fb04db99d19f94aa,1\b\1b8b59410ebf168815cecdd327aec99e67b607c2
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

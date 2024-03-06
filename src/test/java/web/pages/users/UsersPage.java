@@ -27,8 +27,6 @@ public class UsersPage extends BasePage {
     }
 
     public void navigateToPageThree() {
-        wait.until(ExpectedConditions.elementToBeClickable(pageThreePaginationLink));
-
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", pageThreePaginationLink);
     }
 
