@@ -9,7 +9,7 @@ This repository demonstrates the author's proficiency in web automation and incl
 ## Requirements
 
 - Java 11 (JDK 11 or higher)
-- Browser
+- 1 of 3 Browsers(Chrome, Edge and FireFox)
 - Access to Global Kinetic VPN
 
 ## System Under Test (SUT)
@@ -36,6 +36,7 @@ The Java framework utilizes Gradle as the primary build tool. To run the tests:
 - On a Windows operating system, navigate to the project root in your command line.
 - Run the command: `gradle clean test`
 - On a Mac machine, you can run: `./gradlew clean test`
+- In the BaseTest class change the browser to your desired browser in order to run.
 
 ### Reporting
 
@@ -54,3 +55,10 @@ gradle clean test
 
 # Example command to run tests on Mac
 ./gradlew clean test
+
+# Example code to change browser in BaseTest class
+initializeDriver(BrowserType.EDGE);
+OR
+initializeDriver(BrowserType.CHROME);
+OR
+initializeDriver(BrowserType.FIREFOX);
