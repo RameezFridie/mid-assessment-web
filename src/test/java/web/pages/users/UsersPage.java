@@ -27,6 +27,7 @@ public class UsersPage extends BasePage {
     }
 
     public void navigateToPageThree() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[data-qa='3-pagination-button']")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", pageThreePaginationLink);
     }
 
