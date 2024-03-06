@@ -11,7 +11,7 @@ import web.pages.users.UsersPage;
 
 import java.io.IOException;
 
-import static web.common.TestData.NAME_IN_TABLE;
+import static web.common.TestData.NAME_IN_USERS_TABLE;
 
 @Test
 public class UsersTest extends BaseTest {
@@ -31,14 +31,14 @@ public class UsersTest extends BaseTest {
     @Test
     @Description("As a FE user I want to search for a user in the user table.")
     public void testSearchUserTable() {
-        usersPage.searchForUser(NAME_IN_TABLE);
-        Assert.assertTrue(usersPage.isNamePresent(NAME_IN_TABLE));
+        usersPage.searchForUser(NAME_IN_USERS_TABLE);
+        Assert.assertTrue(usersPage.isNamePresent(NAME_IN_USERS_TABLE));
     }
     @Test
     @Description("As a FE user I want to test the pagination on the user table.")
     public void testPaginationOnUserTable() {
         usersPage.navigateToPageThree();
-        Assert.assertTrue(usersPage.isNamePresent(NAME_IN_TABLE));
+        Assert.assertTrue(usersPage.isNamePresent(NAME_IN_USERS_TABLE));
     }
 
 }

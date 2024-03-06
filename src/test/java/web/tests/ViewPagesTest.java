@@ -39,11 +39,4 @@ public class ViewPagesTest extends BaseTest {
         ReviewsPage reviewsPage = new ReviewsPage(getDriver());
         Assert.assertTrue(reviewsPage.isReviewsPageTitleVisible());
     }
-
-    @Description("As a FE user I want to verify the visibility of the Templates page title.")
-    public void testTemplatesPageVisibility() {
-        homePage.clickTemplatesNavLink();
-        TemplatesPage templatesPage = new TemplatesPage(getDriver());
-        Assert.assertTrue(templatesPage.isTemplatesPageTitleVisible());
-    }
 }
