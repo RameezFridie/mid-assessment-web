@@ -34,4 +34,11 @@ public class UsersTest extends BaseTest {
         usersPage.searchForUser(NAME_IN_TABLE);
         Assert.assertTrue(usersPage.isNamePresent(NAME_IN_TABLE));
     }
+    @Test
+    @Description("As a FE user I want to test the pagination on the user table.")
+    public void testPaginationOnUserTable() {
+        usersPage.navigateToPageThree();
+        Assert.assertTrue(usersPage.isNamePresent(NAME_IN_TABLE));
+    }
+
 }
