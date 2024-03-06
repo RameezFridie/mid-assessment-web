@@ -15,6 +15,7 @@ This repository demonstrates the author's proficiency in web automation and incl
 ## System Under Test (SUT)
 
 The System Under Test (SUT) for this project is the [CDM Website](http://dockerdev:8801/login). A connection to the Global Kinetic Network is required to access this website.
+The website is currently receiving updates. Some tests may fail.
 
 ## Installation
 
