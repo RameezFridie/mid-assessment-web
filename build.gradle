@@ -1,15 +1,15 @@
 buildscript {
     ext {
-        testngVersion = '7.9.0'
-        allureVersion = '2.25.0'
+        testngVersion = '7.10.1'
+        allureVersion = '2.27.0'
         allureTestNgAdaptorVersion = '1.5.4'
         allureJavaVersion = '1.3.9'
-        seleniumJavaVersion = '4.17.0'
-        guavaVersion = '33.0.0-jre'
-        lombokVersion = '1.18.30'
+        seleniumJavaVersion = '4.19.1'
+        guavaVersion = '33.1.0-jre'
+        lombokVersion = '1.18.32'
         apacheCommonsVersion = '3.14.0'
-        awaitilityVersion = '4.2.0'
-        webdriverManager = '5.6.3'
+        awaitilityVersion = '4.2.1'
+        webdriverManager = '5.8.0'
     }
 }
 

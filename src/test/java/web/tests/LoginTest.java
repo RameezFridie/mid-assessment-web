@@ -18,19 +18,18 @@ public class LoginTest extends BaseTest {
     @BeforeMethod
     public void setup() throws IOException {
         super.setup();
-        loginPage = new LoginPage(getDriver());
+        loginPage = new LoginPage(driver);
     }
 
     @Description("As a FE user I want to successfully login using valid credentials.")
     public void testLogin() {
-        loginPage.enterLoginDetails(customConfig.getUsername(), customConfig.getPassword());
-        HomePage homePage = new HomePage(getDriver());
+        HomePage homePage = loginPage.loginUser(customConfig.getUsername(), customConfig.getPassword());
         Assert.assertTrue(homePage.isHomepageTitleVisible());
     }
 
     @Description("As a FE user I want to view the error message when attemtpting to login with invalid credentials")
     public void testInvalidCredentialsLogin() {
-        loginPage.enterLoginDetails("invalidUsername", "invalidPassword");
+        loginPage.loginUser("invalidUsername", "invalidPassword");
         Assert.assertTrue(loginPage.isErrorMessageVisible());
     }
 }

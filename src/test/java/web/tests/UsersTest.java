@@ -21,11 +21,9 @@ public class UsersTest extends BaseTest {
     @BeforeMethod
     public void setup() throws IOException {
         super.setup();
-        LoginPage loginPage = new LoginPage(getDriver());
-        loginPage.enterLoginDetails(customConfig.getUsername(), customConfig.getPassword());
-        HomePage homePage = new HomePage(getDriver());
-        homePage.clickUsersNavLink();
-        usersPage = new UsersPage(getDriver());
+        LoginPage loginPage = new LoginPage(driver);
+        HomePage homePage = loginPage.loginUser(customConfig.getUsername(), customConfig.getPassword());
+        usersPage = homePage.clickUsersNavLink();
     }
 
     @Test

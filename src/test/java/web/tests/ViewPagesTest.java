@@ -9,7 +9,6 @@ import web.pages.home.HomePage;
 import web.pages.login.LoginPage;
 import web.pages.reports.ReportsPage;
 import web.pages.reviews.ReviewsPage;
-import web.pages.templates.TemplatesPage;
 
 import java.io.IOException;
 
@@ -21,22 +20,19 @@ public class ViewPagesTest extends BaseTest {
     @BeforeMethod
     public void setup() throws IOException {
         super.setup();
-        LoginPage loginPage = new LoginPage(getDriver());
-        loginPage.enterLoginDetails(customConfig.getUsername(), customConfig.getPassword());
-        homePage = new HomePage(getDriver());
+        LoginPage loginPage = new LoginPage(driver);
+        homePage = loginPage.loginUser(customConfig.getUsername(), customConfig.getPassword());
     }
 
     @Description("As a FE user I want to verify the visibility of the Reports page title.")
     public void testReportsPageVisibility() {
-        homePage.clickReportsNavLink();
-        ReportsPage reportsPage = new ReportsPage(getDriver());
+        ReportsPage reportsPage = homePage.clickReportsNavLink();
         Assert.assertTrue(reportsPage.isReportsPageTitleVisible());
     }
 
     @Description("As a FE user I want to verify the visibility of the Reviews page title.")
     public void testReviewsPageVisibility() {
-        homePage.clickReviewsNavLink();
-        ReviewsPage reviewsPage = new ReviewsPage(getDriver());
+        ReviewsPage reviewsPage = homePage.clickReviewsNavLink();
         Assert.assertTrue(reviewsPage.isReviewsPageTitleVisible());
     }
 }

@@ -65,3 +65,8 @@ Q.idea/sonarlint/securityhotspotstore/0/c/0c5a5d0fdbeaeddd962a9ee7fb04db99d19f94
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 Z
 *src/test/java/web/tests/TemplatesTest.java,d\1\d1a180c8f65fde75b1bfb8ee86302cc028a93c3d
+U
+%src/test/java/web/SetUpWebDriver.java,c\5\c5f5e57a759973a0033f36b7cdc1bfdda597ab3b
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

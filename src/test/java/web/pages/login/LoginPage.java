@@ -5,6 +5,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import web.BasePage;
+import web.pages.home.HomePage;
 
 public class LoginPage extends BasePage {
 
@@ -24,10 +25,11 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void enterLoginDetails(String username, String password) {
+    public HomePage loginUser(String username, String password) {
         usernameInputField.sendKeys(username);
         passwordInputField.sendKeys(password);
         wait.until(ExpectedConditions.elementToBeClickable(loginButton)).click();
+        return new HomePage(driver);
     }
 
     public boolean isErrorMessageVisible() {
