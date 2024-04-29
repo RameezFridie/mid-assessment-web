@@ -24,7 +24,8 @@ public abstract class BaseTest {
     @BeforeMethod
     public void setup() throws IOException {
         customConfig = new CustomConfig(loadProperties());
-        initializeDriver(BrowserType.EDGE);
+        BrowserType browserType = BrowserType.valueOf(customConfig.getBrowser());
+        initializeDriver(browserType);
         navigateToUrl();
     }
 
