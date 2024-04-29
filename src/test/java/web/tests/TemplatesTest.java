@@ -16,11 +16,9 @@ public class TemplatesTest extends BaseTest {
 
     @Description("As a FE user I want to view a template on the template table.")
     public void testViewTemplate() {
-        LoginPage loginPage = new LoginPage(getDriver());
-        loginPage.enterLoginDetails(customConfig.getUsername(), customConfig.getPassword());
-        HomePage homePage = new HomePage(getDriver());
-        homePage.clickTemplatesNavLink();
-        TemplatesPage templatesPage = new TemplatesPage(getDriver());
+        LoginPage loginPage = new LoginPage(driver);
+        HomePage homePage = loginPage.loginUser(customConfig.getUsername(), customConfig.getPassword());
+        TemplatesPage templatesPage = homePage.clickTemplatesNavLink();
         templatesPage.clickTemplateTitle(NAME_IN_TEMPLATES_TABLE);
         Assert.assertTrue(templatesPage.isTemplatesPageMessageVisible(TEMPLATE_MESSAGE));
     }

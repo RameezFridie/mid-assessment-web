@@ -1,5 +1,7 @@
 buildscript {
     ext {
+        testngVersion = '7.10.1'
+        allureVersion = '2.27.0'
         testngVersion = '7.10.2'
         allureVersion = '2.27.0'
         allureTestNgAdaptorVersion = '1.5.4'

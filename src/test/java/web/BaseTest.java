@@ -1,52 +1,33 @@
 package web;
 
-import lombok.Getter;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.slf4j.Logger;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import web.common.TestData;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.slf4j.LoggerFactory.getLogger;
 
 public abstract class BaseTest {
 
     protected static CustomConfig customConfig;
+    protected static SetUpWebDriver setUpWebDriver;
+    private static final Logger LOG = getLogger(lookup().lookupClass());
 
-    @Getter
     protected static RemoteWebDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() throws IOException {
         customConfig = new CustomConfig(loadProperties());
-        BrowserType browserType = BrowserType.valueOf(customConfig.getBrowser());
-        initializeDriver(browserType);
-        navigateToUrl();
-    }
-
-    private void initializeDriver(BrowserType browserType) {
-        switch (browserType) {
-            case CHROME:
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
-                break;
-            case FIREFOX:
-                WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
-                break;
-            case EDGE:
-                WebDriverManager.edgedriver().setup();
-                driver = new EdgeDriver();
-                break;
-            default:
-                throw new IllegalArgumentException("Unsupported browser type: " + browserType);
-        }
+        setUpWebDriver = new SetUpWebDriver();
+        setUpWebDriver.initializeDriver(BrowserType.valueOf(customConfig.getBrowser().toUpperCase()));
         maximizeWindow();
+        navigateToUrl();
     }
 
     private void maximizeWindow() {
@@ -57,20 +38,23 @@ public abstract class BaseTest {
         driver.get(customConfig.getWebUrl());
     }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
-
     private Properties loadProperties() throws IOException {
         Properties properties = new Properties();
         try (FileInputStream file = new FileInputStream(TestData.DATA_PATH)) {
             properties.load(file);
         }
+        catch (FileNotFoundException fileNotFoundException) {
+           LOG.info(String.format("Properties file not found %s", fileNotFoundException)) ;
+        }
         return properties;
     }
 
     public enum BrowserType {
-        CHROME, FIREFOX, EDGE
+        CHROME, FIREFOX, EDGE, SAFARI
+    }
+
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+        driver.quit();
     }
 }
