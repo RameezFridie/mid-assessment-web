@@ -44,7 +44,7 @@ public abstract class BaseTest {
             properties.load(file);
         }
         catch (FileNotFoundException fileNotFoundException) {
-           LOG.info(String.format("Properties file not found %s", fileNotFoundException)) ;
+           LOG.info(String.format("Properties file not found %s", fileNotFoundException));
         }
         return properties;
     }
