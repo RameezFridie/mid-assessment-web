@@ -9,9 +9,9 @@ import java.time.Duration;
 
 public abstract class BasePage {
 
-    protected WebDriverWait wait;
-    protected Actions actions;
-    protected RemoteWebDriver driver;
+    protected final WebDriverWait wait;
+    protected final Actions actions;
+    protected final RemoteWebDriver driver;
 
     public BasePage(RemoteWebDriver driver) {
         this.driver =driver;

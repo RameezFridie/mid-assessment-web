@@ -27,7 +27,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(homePage.isHomepageTitleVisible());
     }
 
-    @Description("As a FE user I want to view the error message when attemtpting to login with invalid credentials")
+    @Description("As a FE user I want to view the error message when attempting to login with invalid credentials")
     public void testInvalidCredentialsLogin() {
         loginPage.loginUser("invalidUsername", "invalidPassword");
         Assert.assertTrue(loginPage.isErrorMessageVisible());
