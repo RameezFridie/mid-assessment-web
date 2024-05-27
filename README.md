@@ -39,6 +39,7 @@ The website is currently receiving updates. Some tests may fail.
 - 
 ### Running
 
+Updates -
 The Java framework utilizes Gradle as the primary build tool. To run the tests:
 
 - On a Windows operating system, navigate to the project root in your command line.
