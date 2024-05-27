@@ -17,7 +17,7 @@ public abstract class BaseTest {
 
     protected static CustomConfig customConfig;
     protected static SetUpWebDriver setUpWebDriver;
-    private static final Logger LOG = getLogger(lookup().lookupClass());
+    public static final Logger LOG = getLogger(lookup().lookupClass());
 
     protected static RemoteWebDriver driver;
 
