@@ -33,8 +33,7 @@ public class SetUpWebDriver extends BaseTest {
                     throw new IllegalArgumentException("Unsupported browser type: " + browserType);
             }
         } catch (NoSuchDriverException | SessionNotCreatedException exception) {
-            LOG.error(String.format("Driver not installed on device %s", exception));
-            LOG.error(String.format("Unable to create driver session %s", exception));
+            LOG.error(String.format("Error creating driver session  %s", exception));
         }
     }
 }
