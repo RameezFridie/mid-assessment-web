@@ -29,7 +29,14 @@ The website is currently receiving updates. Some tests may fail.
 - Choose an Integrated Development Environment (IDE) for development (e.g., IntelliJ IDEA, Eclipse, or Visual Studio Code).
 - Ensure the presence of a `data.properties` file to run the automation successfully.
 - The `data.properties` file should contain the necessary data for the automation to run.
+- Ensure that you have the `data.properties` file.
 
+### Other Libraries
+
+- [**Selenium WebDriver**](https://www.selenium.dev/documentation/webdriver/) to run the automation tests.
+- [**Project Lombok**](https://projectlombok.org/) to get auto-generated Getter and Setter methods.
+- [**TestNG**](https://testng.org/doc/) to get annotations and assertion methods in order to execute the tests.
+- 
 ### Running
 
 The Java framework utilizes Gradle as the primary build tool. To run the tests:
@@ -38,6 +45,15 @@ The Java framework utilizes Gradle as the primary build tool. To run the tests:
 - Run the command: `gradle clean test`
 - On a Mac machine, you can run: `./gradlew clean test`
 - In the BaseTest class change the browser to your desired browser in order to run.
+
+### Project Structure
+
+This project follows a certain structure, where:
+
+- The tests are found under the **tests** package.
+- The classes that provide test data are found under the **common** package.
+- The **CustomConfig.java** class for configuring the `data.properties` is found under the overall web folder.
+- The **SetUpWebDriver.java** class sets up the browser drivers is fount under the overall web folder.
 
 ### Reporting
 
@@ -56,10 +72,3 @@ gradle clean test
 
 # Example command to run tests on Mac
 ./gradlew clean test
-
-# Example code to change browser in BaseTest class
-initializeDriver(BrowserType.EDGE);
-OR
-initializeDriver(BrowserType.CHROME);
-OR
-initializeDriver(BrowserType.FIREFOX);
